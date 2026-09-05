@@ -1,0 +1,20 @@
+import pandas as pd
+
+df = pd.read_csv("data/PS_20174392719_1491204439457_log.csv")
+
+print("Shape (rows, columns):", df.shape)
+print()
+print("Column names and types:")
+print(df.dtypes)
+print()
+print("First 5 rows:")
+print(df.head())
+print()
+print("Fraud vs non-fraud counts:")
+print(df["isFraud"].value_counts())
+print()
+print("Fraud percentage:")
+print(df["isFraud"].value_counts(normalize=True) * 100)
+print()
+print("Transaction type breakdown:")
+print(df["type"].value_counts())
